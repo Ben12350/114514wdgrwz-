@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="杨珂的个人主页——一名住在深圳、热爱探索的五年级学生。">
+  <meta name="theme-color" content="#f3f1eb">
+  <title>杨珂 · 个人主页</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (() => {
+      try {
+        const savedTheme = localStorage.getItem("keke-theme");
+        const savedLanguage = localStorage.getItem("keke-language");
+        if (savedTheme === "dark" || savedTheme === "light") {
+          document.documentElement.dataset.theme = savedTheme;
+        }
+        if (savedLanguage === "en" || savedLanguage === "zh") {
+          document.documentElement.dataset.lang = savedLanguage;
+          document.documentElement.lang = savedLanguage === "en" ? "en" : "zh-CN";
+        }
+      } catch (_) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">
+    <span data-i18n="skip">跳到主要内容</span>
+  </a>
+
+  <div class="page-noise" aria-hidden="true"></div>
+  <div class="ambient ambient--one" aria-hidden="true"></div>
+  <div class="ambient ambient--two" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="杨珂个人主页">
+      <span class="brand__mark">YK</span>
+      <span class="brand__name">
+        <span data-i18n="name">杨珂</span>
+        <small>YANG KE</small>
+      </span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="主导航">
+      <a href="#about" data-i18n="navAbout">关于我</a>
+      <a href="#school" data-i18n="navSchool">我的学校</a>
+      <a href="#teacher" data-i18n="navTeacher">卢老师</a>
+      <a href="#wishes" data-i18n="navWishes">成长小记</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-button language-button" id="languageToggle" type="button" aria-label="Switch to English">
+        <span class="language-button__current">中</span>
+        <span class="language-button__divider"></span>
+        <span class="language-button__next">EN</span>
+      </button>
+      <button class="icon-button theme-button" id="themeToggle" type="button" aria-label="切换深色模式" aria-pressed="false">
+        <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="3.5"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path>
+        </svg>
+        <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.5 15.4A8.5 8.5 0 0 1 8.6 3.5 8.5 8.5 0 1 0 20.5 15.4Z"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section-shell" aria-labelledby="heroTitle">
+      <div class="hero__copy">
+        <p class="eyebrow hero__eyebrow">
+          <span class="eyebrow__line"></span>
+          <span data-i18n="heroEyebrow">你好，这是关于我的小小世界</span>
+        </p>
+        <h1 class="hero__title" id="heroTitle">
+          <span class="hero__title-small" data-i18n="heroHi">你好，我是</span>
+          <span class="hero__title-name">
+            <span data-i18n="name">杨珂</span><span class="hero__dot">。</span>
+          </span>
+          <span class="hero__title-en" aria-hidden="true">YANG<br>KE</span>
+        </h1>
+        <p class="hero__intro" data-i18n="heroIntro">
+          十岁的五年级学生，在好奇心里收集世界，也在每一天里认真长大。
+        </p>
+        <div class="hero__actions">
+          <a class="primary-link" href="#about">
+            <span data-i18n="meetMe">认识我</span>
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M4 10h11M11 6l4 4-4 4"></path>
+            </svg>
+          </a>
+          <a class="text-link" href="#school">
+            <span data-i18n="mySchool">我的学校</span>
+            <span aria-hidden="true">↘</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__visual" aria-label="杨珂的专属姓名徽章">
+        <div class="orbit orbit--outer" aria-hidden="true">
+          <svg viewBox="0 0 200 200">
+            <defs>
+              <path id="circlePath" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"></path>
+            </defs>
+            <text>
+              <textPath href="#circlePath" startOffset="0%">
+                YANG KE · CURIOUS &amp; KIND · YANG KE · CURIOUS &amp; KIND ·
+              </textPath>
+            </text>
+          </svg>
+        </div>
+
+        <div class="portrait-card">
+          <div class="portrait-card__grain" aria-hidden="true"></div>
+          <span class="portrait-card__corner portrait-card__corner--tl" aria-hidden="true">✦</span>
+          <span class="portrait-card__corner portrait-card__corner--br" aria-hidden="true">✦</span>
+          <div class="portrait-card__halo" aria-hidden="true"></div>
+          <div class="portrait-card__monogram">
+            <span class="portrait-card__initial" data-i18n="portraitChar">珂</span>
+            <span class="portrait-card__en">KE</span>
+          </div>
+          <div class="portrait-card__footer">
+            <span>A LITTLE HUMAN</span>
+            <span>05 / 2026</span>
+          </div>
+        </div>
+
+        <div class="floating-note floating-note--age">
+          <span class="floating-note__number">10</span>
+          <span data-i18n="yearsOld">岁</span>
+        </div>
+        <div class="floating-note floating-note--grade">
+          <span class="floating-note__small" data-i18n="gradeLabel">年级</span>
+          <strong>05</strong>
+        </div>
+        <div class="spark spark--one" aria-hidden="true">✦</div>
+        <div class="spark spark--two" aria-hidden="true">✧</div>
+      </div>
+
+      <div class="scroll-cue" aria-hidden="true">
+        <span data-i18n="scroll">向下滚动</span>
+        <span class="scroll-cue__line"></span>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="关键词">
+      <div class="ticker__track">
+        <span>CURIOUS</span><i>✦</i>
+        <span>FIFTH GRADE</span><i>✦</i>
+        <span>KIND</span><i>✦</i>
+        <span>TEN YEARS OLD</span><i>✦</i>
+        <span>SHENZHEN</span><i>✦</i>
+        <span>CURIOUS</span><i>✦</i>
+        <span>FIFTH GRADE</span><i>✦</i>
+        <span>KIND</span><i>✦</i>
+        <span>TEN YEARS OLD</span><i>✦</i>
+        <span>SHENZHEN</span><i>✦</i>
+      </div>
+    </div>
+
+    <section class="about section-shell section-space" id="about" aria-labelledby="aboutTitle">
+      <div class="section-marker reveal">
+        <span>01</span>
+        <span class="section-marker__line"></span>
+        <span data-i18n="navAbout">关于我</span>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__heading reveal">
+          <h2 id="aboutTitle" data-i18n-html="aboutTitle">
+            在十岁这年，<br><em>认真认识世界。</em>
+          </h2>
+        </div>
+
+        <div class="about__body reveal">
+          <p class="about__lead" data-i18n="aboutLead">
+            我叫杨珂，是一名五年级学生。现在的我，正在学习把每一件小事做得更好，也在认识更多有趣的人和地方。
+          </p>
+          <p data-i18n="aboutBody">
+            我喜欢明亮的想法、温暖的相遇和慢慢积累的进步。这个小小的网站，是我的一段自我介绍，也是一张不断更新的成长名片。
+          </p>
+        </div>
+      </div>
+
+      <div class="facts reveal">
+        <article class="fact-card">
+          <span class="fact-card__index">A.</span>
+          <span class="fact-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M24 7v34M13 24h22M16 14l16 20M32 14 16 34"></path></svg>
+          </span>
+          <div>
+            <p data-i18n="factsAgeLabel">我的年龄</p>
+            <strong><span>10</span> <small data-i18n="yearsOld">岁</small></strong>
+          </div>
+        </article>
+        <article class="fact-card">
+          <span class="fact-card__index">B.</span>
+          <span class="fact-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M9 14.5 24 8l15 6.5v22L24 42l-15-5.5v-22Z"></path><path d="M9 14.5 24 22l15-7.5M24 22v20"></path></svg>
+          </span>
+          <div>
+            <p data-i18n="factsGradeLabel">现在的年级</p>
+            <strong><span data-i18n="gradeFive">五年级</span></strong>
+          </div>
+        </article>
+        <article class="fact-card fact-card--wide">
+          <span class="fact-card__index">C.</span>
+          <span class="fact-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M10 35c5.5-9 12.5-14 22-15M26 13l7 7-11 5"></path><circle cx="35" cy="10" r="4.5"></circle></svg>
+          </span>
+          <div>
+            <p data-i18n="factsMottoLabel">成长关键词</p>
+            <strong data-i18n="factsMotto">好奇 · 认真 · 友善</strong>
+          </div>
+        </article>
+      </div>
+
+      <div class="quote-panel reveal">
+        <span class="quote-panel__mark" aria-hidden="true">“</span>
+        <p data-i18n-html="quote">保持好奇，<br>认真长大。</p>
+        <span class="quote-panel__caption" data-i18n="quoteCaption">写给十岁的自己</span>
+        <div class="quote-panel__seal" aria-hidden="true">
+          <span>YK</span>
+          <small>10</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="school section-space" id="school" aria-labelledby="schoolTitle">
+      <div class="section-shell">
+        <div class="section-marker reveal">
+          <span>02</span>
+          <span class="section-marker__line"></span>
+          <span data-i18n="navSchool">我的学校</span>
+        </div>
+      </div>
+
+      <div class="school__stage section-shell">
+        <div class="school-art reveal" aria-hidden="true">
+          <div class="school-art__sun"></div>
+          <div class="school-art__grid"></div>
+          <div class="school-art__orbit school-art__orbit--one"></div>
+          <div class="school-art__orbit school-art__orbit--two"></div>
+          <div class="school-art__building">
+            <div class="school-art__roof"></div>
+            <div class="school-art__flag"></div>
+            <div class="school-art__windows">
+              <i></i><i></i><i></i><i></i><i></i><i></i>
+              <i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <div class="school-art__door"></div>
+          </div>
+          <div class="school-art__caption">
+            <span>LEARNING</span>
+            <span>GROWING</span>
+            <span>SHINING</span>
+          </div>
+        </div>
+
+        <div class="school__content">
+          <p class="eyebrow reveal">
+            <span class="eyebrow__line"></span>
+            <span data-i18n="schoolEyebrow">我的校园坐标</span>
+          </p>
+          <h2 class="reveal" id="schoolTitle" data-i18n-html="schoolTitle">
+            荔园外国语小学<br><em>福民校区</em>
+          </h2>
+          <p class="school__intro reveal" data-i18n="schoolIntro">
+            在深圳，在荔园外国语小学福民校区，我是一名正在读五年级的学生。这里有一间间教室，也有每天发生的新故事。
+          </p>
+
+          <div class="school-id reveal">
+            <div class="school-id__top">
+              <div>
+                <span data-i18n="schoolIdLabel">校园身份卡</span>
+                <strong>STUDENT ID</strong>
+              </div>
+              <span class="school-id__stamp">LY</span>
+            </div>
+            <div class="school-id__body">
+              <div class="school-id__portrait">
+                <span data-i18n="portraitChar">珂</span>
+              </div>
+              <dl>
+                <div>
+                  <dt data-i18n="studentName">姓名</dt>
+                  <dd data-i18n="name">杨珂</dd>
+                </div>
+                <div>
+                  <dt data-i18n="studentGrade">年级</dt>
+                  <dd data-i18n="gradeFive">五年级</dd>
+                </div>
+                <div>
+                  <dt data-i18n="studentCampus">校区</dt>
+                  <dd data-i18n="campus">福民校区</dd>
+                </div>
+              </dl>
+              <div class="school-id__barcode" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="teacher section-shell section-space" id="teacher" aria-labelledby="teacherTitle">
+      <div class="section-marker section-marker--light reveal">
+        <span>03</span>
+        <span class="section-marker__line"></span>
+        <span data-i18n="navTeacher">卢老师</span>
+      </div>
+
+      <div class="teacher__layout">
+        <div class="teacher__intro reveal">
+          <div class="teacher__avatar" aria-hidden="true">
+            <span>卢</span>
+            <i>TEACHER</i>
+          </div>
+          <div>
+            <p class="teacher__kicker" data-i18n="teacherKicker">遇见一位好老师</p>
+            <h2 id="teacherTitle" data-i18n="teacherName">卢老师</h2>
+          </div>
+        </div>
+
+        <blockquote class="teacher__quote reveal">
+          <span class="teacher__quote-mark" aria-hidden="true">“</span>
+          <p data-i18n="teacherQuote">
+            我的老师是卢老师。他非常的好，是一位值得我认真说一声“谢谢”的老师。
+          </p>
+          <footer>
+            <span class="teacher__signature" data-i18n="teacherSignature">来自杨珂的真心话</span>
+            <span class="teacher__stars" aria-label="五星">
+              <i>★</i><i>★</i><i>★</i><i>★</i><i>★</i>
+            </span>
+          </footer>
+        </blockquote>
+      </div>
+
+      <div class="teacher__ribbon reveal" aria-hidden="true">
+        <span>A GOOD TEACHER LIGHTS THE WAY</span>
+        <i>✦</i>
+        <span>一位好老师，会点亮前行的路</span>
+      </div>
+    </section>
+
+    <section class="wishes section-shell section-space" id="wishes" aria-labelledby="wishesTitle">
+      <div class="section-marker reveal">
+        <span>04</span>
+        <span class="section-marker__line"></span>
+        <span data-i18n="navWishes">成长小记</span>
+      </div>
+
+      <div class="wishes__header reveal">
+        <h2 id="wishesTitle" data-i18n-html="wishesTitle">
+          小小时光，<br><em>慢慢长大。</em>
+        </h2>
+        <p data-i18n="wishesIntro">
+          十岁不是终点，而是一页刚刚展开的新纸。认真写好现在的每一笔，未来自然会有答案。
+        </p>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <span class="timeline-item__number">01</span>
+          <div class="timeline-item__line"></div>
+          <div class="timeline-item__content">
+            <p class="timeline-item__tag" data-i18n="timelineNowTag">现在</p>
+            <h3 data-i18n="timelineNowTitle">五年级 · 上册</h3>
+            <p data-i18n="timelineNowText">认识新知识，也认识更好的自己。</p>
+          </div>
+          <span class="timeline-item__symbol" aria-hidden="true">✎</span>
+        </article>
+        <article class="timeline-item reveal">
+          <span class="timeline-item__number">02</span>
+          <div class="timeline-item__line"></div>
+          <div class="timeline-item__content">
+            <p class="timeline-item__tag" data-i18n="timelineDailyTag">每一天</p>
+            <h3 data-i18n="timelineDailyTitle">保持好奇</h3>
+            <p data-i18n="timelineDailyText">多问一个问题，就可能多发现一个世界。</p>
+          </div>
+          <span class="timeline-item__symbol" aria-hidden="true">✦</span>
+        </article>
+        <article class="timeline-item reveal">
+          <span class="timeline-item__number">03</span>
+          <div class="timeline-item__line"></div>
+          <div class="timeline-item__content">
+            <p class="timeline-item__tag" data-i18n="timelineFutureTag">向未来</p>
+            <h3 data-i18n="timelineFutureTitle">认真长大</h3>
+            <p data-i18n="timelineFutureText">一步一步，把普通的日子过得闪闪发光。</p>
+          </div>
+          <span class="timeline-item__symbol" aria-hidden="true">↗</span>
+        </article>
+      </div>
+
+      <div class="fortune reveal">
+        <div class="fortune__copy">
+          <span class="fortune__label" data-i18n="fortuneLabel">今天的小纸条</span>
+          <p id="fortuneText" data-i18n="fortuneDefault">好奇心，是每个人心里藏着的小小指南针。</p>
+        </div>
+        <button class="fortune__button" id="fortuneButton" type="button">
+          <span data-i18n="fortuneButton">换一张</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"></path>
+          </svg>
+        </button>
+        <span class="fortune__star fortune__star--1" aria-hidden="true">✦</span>
+        <span class="fortune__star fortune__star--2" aria-hidden="true">✧</span>
+      </div>
+    </section>
+
+    <section class="outro" aria-labelledby="outroTitle">
+      <div class="outro__lines" aria-hidden="true"></div>
+      <div class="outro__content reveal">
+        <p class="eyebrow">
+          <span class="eyebrow__line"></span>
+          <span data-i18n="outroEyebrow">谢谢你的到来</span>
+        </p>
+        <h2 id="outroTitle" data-i18n-html="outroTitle">
+          愿我们都能<br><em>好奇、认真、闪闪发光。</em>
+        </h2>
+        <div class="outro__signature">
+          <span data-i18n="outroBy">杨珂 · 十岁</span>
+          <small>YANG KE · 2026</small>
+        </div>
+      </div>
+      <a class="back-to-top" href="#top" aria-label="回到顶部">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V4M5 11l7-7 7 7"></path></svg>
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <span class="site-footer__mark">YK</span>
+      <p>
+        <span data-i18n="footerMade">一张属于杨珂的成长名片</span>
+        <span> · © 2026</span>
+      </p>
+    </div>
+    <p class="site-footer__note" data-i18n="footerNote">无需注册 · 本地访问 · 用心制作</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
