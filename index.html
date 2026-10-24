@@ -45,11 +45,15 @@
     <nav class="desktop-nav" aria-label="主导航">
       <a href="#about" data-i18n="navAbout">关于我</a>
       <a href="#school" data-i18n="navSchool">我的学校</a>
-      <a href="#teacher" data-i18n="navTeacher">卢老师</a>
+      <a href="#teacher" data-i18n="navTeacher">班主任</a>
       <a href="#wishes" data-i18n="navWishes">成长小记</a>
     </nav>
 
     <div class="header-actions">
+      <button class="icon-button music-button" id="musicToggle" type="button" aria-label="播放温柔背景音乐" aria-pressed="false">
+        <span class="music-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="music-button__label" data-i18n="musicLabel">音乐</span>
+      </button>
       <button class="icon-button language-button" id="languageToggle" type="button" aria-label="Switch to English">
         <span class="language-button__current">中</span>
         <span class="language-button__divider"></span>
@@ -265,10 +269,10 @@
             <span data-i18n="schoolEyebrow">我的校园坐标</span>
           </p>
           <h2 class="reveal" id="schoolTitle" data-i18n-html="schoolTitle">
-            荔园外国语小学<br><em>福民校区</em>
+            荔园外国语小学<br><em>海滨校区</em>
           </h2>
           <p class="school__intro reveal" data-i18n="schoolIntro">
-            在深圳，在荔园外国语小学福民校区，我是一名正在读五年级的学生。这里有一间间教室，也有每天发生的新故事。
+            在深圳，在荔园外国语小学海滨校区，我是一名正在读五年级的学生。这里有一间间教室，也有每天发生的新故事。
           </p>
 
           <div class="school-id reveal">
@@ -294,7 +298,7 @@
                 </div>
                 <div>
                   <dt data-i18n="studentCampus">校区</dt>
-                  <dd data-i18n="campus">福民校区</dd>
+                  <dd data-i18n="campus">海滨校区</dd>
                 </div>
               </dl>
               <div class="school-id__barcode" aria-hidden="true"></div>
@@ -308,7 +312,7 @@
       <div class="section-marker section-marker--light reveal">
         <span>03</span>
         <span class="section-marker__line"></span>
-        <span data-i18n="navTeacher">卢老师</span>
+        <span data-i18n="navTeacher">班主任</span>
       </div>
 
       <div class="teacher__layout">
@@ -318,7 +322,7 @@
             <i>TEACHER</i>
           </div>
           <div>
-            <p class="teacher__kicker" data-i18n="teacherKicker">遇见一位好老师</p>
+            <p class="teacher__kicker" data-i18n="teacherKicker">我的班主任 · 卢老师</p>
             <h2 id="teacherTitle" data-i18n="teacherName">卢老师</h2>
           </div>
         </div>
@@ -326,7 +330,7 @@
         <blockquote class="teacher__quote reveal">
           <span class="teacher__quote-mark" aria-hidden="true">“</span>
           <p data-i18n="teacherQuote">
-            我的老师是卢老师。他非常的好，是一位值得我认真说一声“谢谢”的老师。
+            我的班主任是卢老师。他非常的好，是一位值得我认真说一声“谢谢”的老师。
           </p>
           <footer>
             <span class="teacher__signature" data-i18n="teacherSignature">来自杨珂的真心话</span>
@@ -441,6 +445,7 @@
     <p class="site-footer__note" data-i18n="footerNote">无需注册 · 本地访问 · 用心制作</p>
   </footer>
 
+  <audio id="gentleMusic" src="assets/gentle-music.wav" loop preload="metadata"></audio>
   <script src="script.js"></script>
 </body>
 </html>

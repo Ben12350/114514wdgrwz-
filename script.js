@@ -9,7 +9,7 @@
       name: "杨珂",
       navAbout: "关于我",
       navSchool: "我的学校",
-      navTeacher: "卢老师",
+      navTeacher: "班主任",
       navWishes: "成长小记",
       heroEyebrow: "你好，这是关于我的小小世界",
       heroHi: "你好，我是",
@@ -31,17 +31,20 @@
       quote: "保持好奇，<br>认真长大。",
       quoteCaption: "写给十岁的自己",
       schoolEyebrow: "我的校园坐标",
-      schoolTitle: "荔园外国语小学<br><em>福民校区</em>",
-      schoolIntro: "在深圳，在荔园外国语小学福民校区，我是一名正在读五年级的学生。这里有一间间教室，也有每天发生的新故事。",
+      schoolTitle: "荔园外国语小学<br><em>海滨校区</em>",
+      schoolIntro: "在深圳，在荔园外国语小学海滨校区，我是一名正在读五年级的学生。这里有一间间教室，也有每天发生的新故事。",
       schoolIdLabel: "校园身份卡",
       studentName: "姓名",
       studentGrade: "年级",
       studentCampus: "校区",
-      campus: "福民校区",
-      teacherKicker: "遇见一位好老师",
+      campus: "海滨校区",
+      teacherKicker: "我的班主任 · 卢老师",
       teacherName: "卢老师",
-      teacherQuote: "我的老师是卢老师。他非常的好，是一位值得我认真说一声“谢谢”的老师。",
+      teacherQuote: "我的班主任是卢老师。他非常的好，是一位值得我认真说一声“谢谢”的老师。",
       teacherSignature: "来自杨珂的真心话",
+      musicLabel: "音乐",
+      musicPlayAria: "播放温柔背景音乐",
+      musicPauseAria: "暂停背景音乐",
       wishesTitle: "小小时光，<br><em>慢慢长大。</em>",
       wishesIntro: "十岁不是终点，而是一页刚刚展开的新纸。认真写好现在的每一笔，未来自然会有答案。",
       timelineNowTag: "现在",
@@ -69,7 +72,7 @@
       name: "Yang Ke",
       navAbout: "About me",
       navSchool: "My school",
-      navTeacher: "Teacher Lu",
+      navTeacher: "Homeroom Teacher",
       navWishes: "Growing up",
       heroEyebrow: "A little world, all about me",
       heroHi: "Hello, I am",
@@ -91,17 +94,20 @@
       quote: "Stay curious.<br>Grow with care.",
       quoteCaption: "A note to my ten-year-old self",
       schoolEyebrow: "My school on the map",
-      schoolTitle: "Liyuan Foreign Language Primary School<br><em>Fumin Campus</em>",
-      schoolIntro: "In Shenzhen, at Liyuan Foreign Language Primary School's Fumin Campus, I am a fifth-grade student. There are classrooms, and there are new stories every day.",
+      schoolTitle: "Liyuan Foreign Language Primary School<br><em>Haibin Campus</em>",
+      schoolIntro: "In Shenzhen, at Liyuan Foreign Language Primary School's Haibin Campus, I am a fifth-grade student. There are classrooms, and there are new stories every day.",
       schoolIdLabel: "Campus identity card",
       studentName: "NAME",
       studentGrade: "GRADE",
       studentCampus: "CAMPUS",
-      campus: "Fumin Campus",
-      teacherKicker: "A teacher who makes a difference",
+      campus: "Haibin Campus",
+      teacherKicker: "My homeroom teacher · Teacher Lu",
       teacherName: "Teacher Lu",
-      teacherQuote: "My teacher is Teacher Lu. Teacher Lu is truly wonderful and deserves a heartfelt thank-you.",
+      teacherQuote: "My homeroom teacher is Teacher Lu. Teacher Lu is truly wonderful and deserves a heartfelt thank-you.",
       teacherSignature: "From the heart of Yang Ke",
+      musicLabel: "Music",
+      musicPlayAria: "Play gentle background music",
+      musicPauseAria: "Pause background music",
       wishesTitle: "Little moments,<br><em>growing up slowly.</em>",
       wishesIntro: "Ten is not the finish line; it is a fresh page that has just opened. Write each line with care, and the future will find its answer.",
       timelineNowTag: "NOW",
@@ -146,12 +152,15 @@
   const root = document.documentElement;
   const themeButton = document.querySelector("#themeToggle");
   const languageButton = document.querySelector("#languageToggle");
+  const musicButton = document.querySelector("#musicToggle");
+  const backgroundMusic = document.querySelector("#gentleMusic");
   const fortuneButton = document.querySelector("#fortuneButton");
   const fortuneText = document.querySelector("#fortuneText");
   const metaTheme = document.querySelector('meta[name="theme-color"]');
   const metaDescription = document.querySelector('meta[name="description"]');
 
   let currentLanguage = root.dataset.lang === "en" ? "en" : "zh";
+  backgroundMusic.volume = 0.32;
 
   const savePreference = (key, value) => {
     try {
@@ -169,6 +178,18 @@
         : isDark ? "Switch to light mode" : "Switch to dark mode"
     );
     metaTheme.setAttribute("content", isDark ? "#11110f" : "#f3f1eb");
+  };
+
+  const syncMusicControl = () => {
+    const isPlaying = !backgroundMusic.paused && !backgroundMusic.ended;
+    const copy = translations[currentLanguage];
+    musicButton.classList.toggle("is-playing", isPlaying);
+    musicButton.setAttribute("aria-pressed", String(isPlaying));
+    musicButton.setAttribute(
+      "aria-label",
+      isPlaying ? copy.musicPauseAria : copy.musicPlayAria
+    );
+    musicButton.title = isPlaying ? copy.musicPauseAria : copy.musicPlayAria;
   };
 
   const applyLanguage = (language) => {
@@ -196,6 +217,7 @@
       language === "zh" ? "Switch to English" : "切换成中文"
     );
     fortuneText.textContent = copy.fortuneDefault;
+    syncMusicControl();
     syncThemeControls();
   };
 
@@ -210,6 +232,28 @@
     const nextLanguage = currentLanguage === "zh" ? "en" : "zh";
     applyLanguage(nextLanguage);
     savePreference("keke-language", nextLanguage);
+  });
+
+  musicButton.addEventListener("click", async () => {
+    if (backgroundMusic.paused) {
+      try {
+        await backgroundMusic.play();
+      } catch (_) {
+        musicButton.setAttribute("aria-label", "音乐暂时无法播放，请再试一次");
+      }
+    } else {
+      backgroundMusic.pause();
+    }
+    syncMusicControl();
+  });
+
+  ["play", "pause", "ended"].forEach((eventName) => {
+    backgroundMusic.addEventListener(eventName, syncMusicControl);
+  });
+
+  backgroundMusic.addEventListener("error", () => {
+    musicButton.disabled = true;
+    musicButton.setAttribute("aria-label", "背景音乐加载失败");
   });
 
   fortuneButton.addEventListener("click", () => {
